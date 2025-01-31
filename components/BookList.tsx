@@ -1,0 +1,28 @@
+import React from 'react'
+import BookCard from './BookCard'
+
+const BookList = ({
+  title,
+  books,
+  containerClassName
+}:{
+  title:string,
+  books:Book[],
+  containerClassName?:string
+}) => {
+  return (
+    <section className={containerClassName}>
+      <h2 className='font-bebas-neue text-4xl text-light-100'>
+        {title}
+      </h2>
+      <ul className='book-list items-center'>
+        {
+          books.map(book=><BookCard {...book} key={book.title}/>)
+        }
+
+      </ul>
+    </section>
+  )
+}
+
+export default BookList
